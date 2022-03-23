@@ -15,12 +15,13 @@
 ``` pip3 in opencv-python==3.4.2.17 ```
 
 # Project creation command:
-``` django-admin startproject Face-recognition-registration-and-login-system-OpenCv-Django```
+``` django-admin startproject <project_name>```
 
 # Important command for this project-
 ``` python3 manage.py startapp app_name ``` - **For Creating App**  
 ``` python3 manage.py makemigrations``` - **Migrations Model**  
-``` python3 manage.py migrate```- **For migrating to Database** 
+``` python3 manage.py migrate```- **For migrating to Database**
+``` python3 manage.py runserver```- **To start the server**
 
 # Descriptions
 
