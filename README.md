@@ -20,7 +20,7 @@
 # Important command for this project-
 ``` python3 manage.py startapp app_name ``` - **For Creating App**  
 ``` python3 manage.py makemigrations``` - **Migrations Model**  
-``` python3 manage.py migrate```- **For migrating to Database**
+``` python3 manage.py migrate```- **For migrating to Database**  
 ``` python3 manage.py runserver```- **To start the server**
 
 # Descriptions
