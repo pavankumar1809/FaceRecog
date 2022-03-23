@@ -13,14 +13,9 @@ def register(request):
     if request.method == "POST":
         form = ResgistrationForm(request.POST or None)
         if form.is_valid():
-            form.save()
+            form.save() 
+            return redirect("enable" ,face_id=request.POST['face_id'])
             
-            print("IN HERE")
-            print(request)
-            messages.success(request,"SuceessFully registered")
-            print(request.POST['face_id'])
-            addFace(request.POST['face_id'])
-            redirect('home')
         else:
             messages.error(request,"Account registered failed")
     else:
@@ -28,12 +23,26 @@ def register(request):
 
     return render(request, 'faceDetection/register.html', {'form':form})
 
+def enableFace(request,face_id):
+    print("Hi")
+    if(request.GET.get('enable')):
+           
+        print("IN HERE")
+        print(request)
+        messages.success(request,"SuceessFully registered")
+        print(face_id)
+        addFace(face_id)
+        return redirect('login')
+
+    return render(request, 'faceDetection/enable.html')
+
+
 def addFace(face_id):
     print(face_id)
     face_id = face_id
     faceRecognition.faceDetect(face_id)
     faceRecognition.trainFace()
-    return redirect('/')
+    return redirect(home)
 
 def login(request):
     face_id = faceRecognition.recognizeFace()
